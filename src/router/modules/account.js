@@ -15,7 +15,7 @@ const hhAppRouter = {
   children: [
     {
       path: "list",
-      component: () => import("@/views/machine/machine-apply"),
+      component: () => import("@/views/machine/hh-account-list"),
       name: "hh-Account-user",
       meta: { title: "用户管理" },
     },

@@ -36,6 +36,13 @@ export function removeRegisterMachine(mac_id) {
   });
 }
 
+export function get_hh_user_list() {
+  return request({
+    url: "/hh_app/hh_user_list",
+    method: "get",
+  });
+}
+
 export function fetchArticle(id) {
   return request({
     url: "/vue-element-admin/article/detail",

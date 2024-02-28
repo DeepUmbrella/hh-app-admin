@@ -2,7 +2,7 @@
   "name": "hh-app-admin",
   "version": "0.0.1",
   "description": "```bash\r # clone the project\r git clone https://github.com/DeepUmbrella/hh-app-admin.git",
-  "main": "src/mian.js",
+  "main": "src/main.js",
   "author": "",
   "license": "ISC",
   "scripts": {
