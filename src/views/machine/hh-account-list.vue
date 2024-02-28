@@ -52,7 +52,7 @@
 <script>
 import { removeRegisterMachine, updateMachineStatus, fetchMachineList, get_hh_user_list } from '@/api/article'
 import waves from '@/directive/waves' // waves directive
-import { parseTime } from '@/utils'
+import { getToken } from '@/utils/auth'
 import Pagination from '@/components/Pagination' // secondary package based on el-pagination
 
 
@@ -89,7 +89,8 @@ export default {
   methods: {
     get_hh_user_list() {
       this.listLoading = true
-      get_hh_user_list().then(response => {
+      const token = getToken()
+      get_hh_user_list(token).then(response => {
         this.list = response.result
         this.total = response.total
       }).finally(() => {

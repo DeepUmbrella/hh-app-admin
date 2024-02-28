@@ -1,4 +1,5 @@
 import request from "@/utils/request";
+import { getToken } from "@/utils/auth";
 
 export function fetchList() {
   return request({
@@ -36,9 +37,9 @@ export function removeRegisterMachine(mac_id) {
   });
 }
 
-export function get_hh_user_list() {
+export function get_hh_user_list(token) {
   return request({
-    url: "/hh_app/hh_user_list",
+    url: `/hh_app/hh_user_list?token=${token}`,
     method: "get",
   });
 }
