@@ -43,6 +43,28 @@ export function get_hh_user_list(token) {
     method: "get",
   });
 }
+export function delete_hh_app_user(row) {
+  return request({
+    url: `/hh_app/delete_hh_user`,
+    method: "post",
+    data: { username: row.username },
+  });
+}
+
+export function update_hh_app_user_status(row) {
+  return request({
+    url: `/hh_app/update_hh_user_status`,
+    method: "post",
+    data: { username: row.username, enable: !row.enable },
+  });
+}
+export function update_hh_app_user_info(row) {
+  return request({
+    url: `/hh_app/update_hh_user_info`,
+    method: "post",
+    data: { username: row.username, password: row.password },
+  });
+}
 
 export function fetchArticle(id) {
   return request({

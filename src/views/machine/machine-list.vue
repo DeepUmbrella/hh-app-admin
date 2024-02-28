@@ -11,6 +11,11 @@
           <span>{{ row.mac_id }}</span>
         </template>
       </el-table-column>
+      <el-table-column label="状态" align="center">
+        <template slot-scope="{row}">
+          <span :style="{ color: row.enable ? 'green' : 'red' }">{{ row.enable ? "正常" : "停用" }}</span>
+        </template>
+      </el-table-column>
       <el-table-column label="创建时间" width="200px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.createDate }}</span>
@@ -42,7 +47,7 @@
 <script>
 import { removeRegisterMachine, updateMachineStatus, fetchMachineList } from '@/api/article'
 import waves from '@/directive/waves' // waves directive
-import { parseTime } from '@/utils'
+
 import Pagination from '@/components/Pagination' // secondary package based on el-pagination
 
 

@@ -1,5 +1,12 @@
 <template>
   <div class="app-container">
+    <div class="filter-container">
+      <el-button v-waves class="filter-item" type="primary" icon="el-icon-search" @click="getList()">
+        刷新申请列表
+      </el-button>
+    </div>
+
+
     <el-table :key="tableKey" v-loading="listLoading" :data="list" border fit highlight-current-row style="width: 100%;">
       <el-table-column label="ID" prop="id" sortable="custom" align="center" width="80">
         <template slot-scope="{row}">
